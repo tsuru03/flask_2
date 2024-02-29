@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pubmed-IF Advanced Filter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/image.css') }}">
+</head>
+<body>
+    <h1>Pubmed-IF Advanced Filter</h1>
+    <form action="/sampleform-post" method="POST">
+        <p>◎Pubmed用の検索ワードを入れて下さい (3つまで可)</p>
+        <input name="data1"></input>
+        <input name="data2"></input>
+        <input name="data3"></input>
+        <br>
+        <p>◎Impact Factorでfilteringを行いますか？（Impact Factor 約4.0または8.0以上の論文を抽出します : Noは検証用）</p>
+        <input type="radio" id="IF_yes" name="IF_filter" value="yes">
+        <label for="IF_yes">Yes</label><br>
+        
+        <input type="radio" id="IF_no" name="IF_filter" value="no">
+        <label for="If_yes">No</label><br>
+        <p>◎Impact Factorの下限を設定して下さい</p>
+        <input type="radio" id="IF_8.0" name="IF_limit" value="8.0">
+        <label for="IF_8.0">IF:約8.0以上</label><br>
+        
+        <input type="radio" id="IF_4.0" name="IF_limit" value="4.0">
+        <label for="If_4.0">IF:約4.0以上</label><br>
+
+        <p>◎検索上限数を設定して下さい</p>
+        <input type="radio" id="limit10" name="search_limit" value="10">
+        <label for="limit10">10</label><br>
+        
+        <input type="radio" id="limit100" name="search_limit" value="100">
+        <label for="limit100">100</label><br>
+
+        <input type="radio" id="limit300" name="search_limit" value="300">
+        <label for="limit300">300</label><br>
+        
+        <input type="radio" id="limit400" name="search_limit" value="400">
+        <label for="limit500">400</label><br>
+    
+        <p>◎AbstractのKeywordでfilteringを行いますか？ （Keyword1、Keyword2の関連度が高いものをfilteringします、デフォルトはNo）</p>
+        <input type="radio" id="analysis_yes" name="additional_analysis" value="yes">
+        <label for="analysis_yes">Yes (下記のKeywordを入力)</label><br>
+        <input type="radio" id="analysis_no" name="additional_analysis" value="no">
+        <label for="analysis_no">No (そのまま検索ボタンを押す)</label><br>
+        <p>◎Yesの場合Keywordを入れて下さい （Keyword1と2が同じsentence内にある論文を抽出します） </p>
+        <p>Keyword1 （類似するKeywordを入れて下さい : Ketone、Ketogenic、BHB）</p>
+        <input name="data4"></input>
+        <input name="data5"></input>
+        <input name="data6"></input>
+        <p>Keyword2 （類似するKeywordを入れて下さい : Kidney、Renal、CKD）</p>
+        <input name="data7"></input>
+        <input name="data8"></input>
+        <input name="data9"></input>
+        <br>
+        <br>
+        <button type="submit">検索</button>
+    </form>
+    </body>
+</html>
